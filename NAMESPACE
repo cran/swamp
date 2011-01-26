@@ -1,0 +1,1 @@
+export(prince,prince.plot,prince.var.plot,hca.plot,hca.test,confounding,feature.assoc,dense.plot,corrected.p,quickadjust.zero,quickadjust.ref,kill.pc)
