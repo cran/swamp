@@ -7,7 +7,10 @@ Dendrogram with according sample annotations
 The function plots the dendrogram from hierarchical cluster analysis with colorcoded sample annotations below.
 }
 \usage{
-hca.plot(g, o, method = "correlation", link = "ward", colored = palette(), border = NA, code = colnames(o), cex.code = 1, breaks = round(nrow(oreihe)/4), cutcolors = colorpanel(breaks, low = "green", mid = "black", high = "red"))
+hca.plot(g, o, method = "correlation", link = "ward", colored = palette(), 
+         border = NA, code = colnames(o), cex.code = 1, 
+         breaks = round(nrow(oreihe)/4), 
+         cutcolors = colorpanel(breaks, low = "green", mid = "black", high = "red"))
 }
 \arguments{
   \item{g}{ the input data in form of a matrix with features as rows and samples as columns.
@@ -38,27 +41,22 @@ The data is clustered using the amap package. The plot works for sample annotati
 If the annotation is a factor, the annotations come in the colororder specified by colored.
 If the annotation is numeric, breaks and cutcolors is used which is currently set to be a colorpanel().
 }
-\value{
-}
-\references{
-}
 \author{Martin Lauss
 }
 \note{
 requires the packages amap and gplots 
 }
-
-\seealso{
-}
 \examples{
 # data as a matrix
 set.seed(100)
-g<-matrix(nrow=1000,ncol=50,rnorm(1000*50),dimnames=list(paste("Feature",1:1000),paste("Sample",1:50)))
+g<-matrix(nrow=1000,ncol=50,rnorm(1000*50),dimnames=list(paste("Feature",1:1000),
+   paste("Sample",1:50)))
 g[1:100,26:50]<-g[1:100,26:50]+1 # the first 100 features show higher values in the samples 26:50
 # patient annotations as a data.frame, annotations should be numbers and factor but not characters.
 # rownames have to be the same as colnames of the data matrix 
 set.seed(200)
-o<-data.frame(Factor1=factor(c(rep("A",25),rep("B",25))),Factor2=factor(rep(c("A","B"),25)),
+o<-data.frame(Factor1=factor(c(rep("A",25),rep("B",25))),
+              Factor2=factor(rep(c("A","B"),25)),
               Numeric1=rnorm(50),row.names=colnames(g))
 
 ## hca plot

@@ -6,7 +6,8 @@
 plots the variation contained in the pc for both observed data and reshuffled data.
 }
 \usage{
-prince.var.plot(g, show.top = dim(g)[2], imputeknn = F, center = T, npermute = 10)
+prince.var.plot(g, show.top = dim(g)[2], imputeknn = F, 
+                center = T, npermute = 10)
 }
 \arguments{
   \item{g}{
@@ -33,16 +34,15 @@ a list with components
   \item{permuted.variation}{a matrix containing the percentages of variation for each principal component in the reshuffled data sets.
     }
 }
-\references{}
 \author{Martin Lauss}
 \note{requires the package impute}
-
-\seealso{}
 \examples{
 ## data as a matrix
 set.seed(100)
-g<-matrix(nrow=1000,ncol=50,rnorm(1000*50),dimnames=list(paste("Feature",1:1000),paste("Sample",1:50)))
-g[1:100,26:50]<-g[1:100,26:50]+1 # the first 100 features show higher values in the samples 26:50
+g<-matrix(nrow=1000,ncol=50,rnorm(1000*50),dimnames=list(paste("Feature",1:1000),
+          paste("Sample",1:50)))
+g[1:100,26:50]<-g[1:100,26:50]+1 
+     # the first 100 features show higher values in the samples 26:50
 
 ## to plot the variations
 res2<-prince.var.plot(g,show.top=50,npermute=10)

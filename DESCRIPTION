@@ -1,9 +1,9 @@
 Package: swamp
 Type: Package
-Title: Analysis and visualization of high-dimensional data in respect
-        to sample annotations.
-Version: 1.0
-Depends: impute, amap, gplots
+Title: Visualization, analysis and adjustment of high-dimensional data
+        in respect to sample annotations.
+Version: 1.2.3
+Depends: impute, amap, gplots, MASS
 Author: Martin Lauss
 Maintainer: Martin Lauss <martin.lauss@med.lu.se>
 Description: The package contains functions to connect the structure of
@@ -16,6 +16,7 @@ Description: The package contains functions to connect the structure of
         batch effects and removal of principal components.
 License: GPL (>= 2)
 LazyLoad: yes
-Packaged: 2011-01-26 10:22:21 UTC; Martin
+Packaged: 2013-03-13 12:01:05 UTC; Martin
+NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2011-01-28 12:10:16
+Date/Publication: 2013-03-13 14:11:11

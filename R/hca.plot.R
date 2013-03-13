@@ -22,7 +22,7 @@ if(!is.data.frame(oreihe)){
   oreihe<-data.frame(oreihe)}  ## vector in data.frame
 
     def.par <- par(no.readonly = TRUE)
-layout(c(1,2),height=c(1,dim(oreihe)[2]/10))
+layout(c(1,2),heights=c(1,dim(oreihe)[2]/10))
 par(mar=c(0,6,0,1))
 plot(dend1,xlab="",ylab="",cex=0.5,main="",leaflab="none")
 par(mar=c(0,6+(15/nrow(oreihe)),0,1+(15/nrow(oreihe))))

@@ -25,24 +25,21 @@ kill.pc(g, pc, imputeknn = F, center = T)
 \value{
 a matrix which is the new data with the specified principal components removed.
 }
-\references{
-}
 \author{Martin Lauss
 }
 \note{requires the package impute.
 }
-
-\seealso{
-}
 \examples{
 # data as a matrix
 set.seed(100)
-g<-matrix(nrow=1000,ncol=50,rnorm(1000*50),dimnames=list(paste("Feature",1:1000),paste("Sample",1:50)))
+g<-matrix(nrow=1000,ncol=50,rnorm(1000*50),dimnames=list(paste("Feature",1:1000),
+   paste("Sample",1:50)))
 g[1:100,26:50]<-g[1:100,26:50]+1 # the first 100 features show higher values in the samples 26:50
 # patient annotations as a data.frame, annotations should be numbers and factors but not characters.
 # rownames have to be the same as colnames of the data matrix 
 set.seed(200)
-o<-data.frame(Factor1=factor(c(rep("A",25),rep("B",25))),Factor2=factor(rep(c("A","B"),25)),
+o<-data.frame(Factor1=factor(c(rep("A",25),rep("B",25))),
+              Factor2=factor(rep(c("A","B"),25)),
               Numeric1=rnorm(50),row.names=colnames(g))
   
 ## pca on unadjusted data
@@ -51,7 +48,7 @@ prince.plot(res1)
 
 ## take out pc1
 gadj3<-kill.pc(g,pc=1)
-prince.plot(prince(gadj3,o,top=10),breaks=seq(-20,0,length.out=100))  # to have the same breaks as in prince.plot of unudjusted data
+prince.plot(prince(gadj3,o,top=10))  
 }
 
 \keyword{ design }

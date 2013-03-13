@@ -6,7 +6,8 @@
 The function corrects for multiple testing of associations of features to sample annotation. Adjustment is done by padjust() or by the p-values from permuted data.
 }
 \usage{
-corrected.p(feature.assoc, correction = "fdr", adjust.permute = T, adjust.rank = T, ties.method = "first")
+corrected.p(feature.assoc, correction = "fdr", adjust.permute = T, 
+            adjust.rank = T, ties.method = "first")
 }
 \arguments{
   \item{feature.assoc}{a list with the p-values of feature associations, typically created by the function feature.assoc(). (If not created by feature.assoc() the list has to contain the elements observed.p and permuted.p.)
@@ -36,20 +37,18 @@ a list with components
     }
 
 }
-\references{}
 \author{Martin Lauss}
-\note{}
-
-\seealso{}
 \examples{
 # data as a matrix
 set.seed(100)
-g<-matrix(nrow=1000,ncol=50,rnorm(1000*50),dimnames=list(paste("Feature",1:1000),paste("Sample",1:50)))
+g<-matrix(nrow=1000,ncol=50,rnorm(1000*50),dimnames=list(paste("Feature",1:1000),
+          paste("Sample",1:50)))
 g[1:100,26:50]<-g[1:100,26:50]+1 # the first 100 features show higher values in the samples 26:50
 # patient annotations as a data.frame, annotations should be numbers and factor but not characters.
 # rownames have to be the same as colnames of the data matrix 
 set.seed(200)
-o<-data.frame(Factor1=factor(c(rep("A",25),rep("B",25))),Factor2=factor(rep(c("A","B"),25)),
+o<-data.frame(Factor1=factor(c(rep("A",25),rep("B",25))),
+              Factor2=factor(rep(c("A","B"),25)),
               Numeric1=rnorm(50),row.names=colnames(g))
               
 

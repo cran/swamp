@@ -18,13 +18,16 @@ function(g,o,top=25,imputeknn=F,center=T,permute=F){
          }
   if(center==T){pr<-prcomp(t(g))}
   if(center==F){pr<-prcomp(t(g),center=F)}
-  linp<-matrix(ncol=top,nrow=ncol(o))
+  linp<-matrix(ncol=top,nrow=ncol(o))  
   rownames(linp)<-colnames(o)
+  rsquared<-matrix(ncol=top,nrow=ncol(o))
+  rownames(rsquared)<-colnames(o)
   for (i in 1:ncol(o)){
   for (j in 1:top){
   fit<-lm(pr$x[,j]~o[,i])
   s<-summary(fit)
   linp[i,j]<-pf(s$fstatistic[1],s$fstatistic[2],s$fstatistic[3],lower.tail=FALSE)
+  rsquared[i,j]<-s$r.squared[1]
   }}
   prop<-(pr$sdev[1:top]^2/sum(pr$sdev^2))*100
 
@@ -36,17 +39,20 @@ function(g,o,top=25,imputeknn=F,center=T,permute=F){
       if(center==F){prperm<-prcomp(t(gperm),center=F)}
       linpperm<-matrix(ncol=top,nrow=ncol(o))
       rownames(linpperm)<-colnames(o)
+      rsquaredperm<-matrix(ncol=top,nrow=ncol(o))
+      rownames(rsquaredperm)<-colnames(o)
       for (i in 1:ncol(o)){
       for (j in 1:top){
       fitperm<-lm(prperm$x[,j]~o[,i])
       sperm<-summary(fitperm)
       linpperm[i,j]<-pf(sperm$fstatistic[1],sperm$fstatistic[2],sperm$fstatistic[3],lower.tail=FALSE)
+      rsquaredperm[i,j]<-sperm$r.squared[1]
       }}
       propperm<-(prperm$sdev[1:top]^2/sum(prperm$sdev^2))*100
       }
 
-  ret<-list(pr=pr,linp=linp,prop=prop,o=o,prperm=if(permute==T){prperm},linpperm=if(permute==T){linpperm},
-            propperm=if(permute==T){propperm},imputed=if(imputeknn==T){gimpute$data})
+  ret<-list(pr=pr,linp=linp,rsquared=rsquared,prop=prop,o=o,prperm=if(permute==T){prperm},linpperm=if(permute==T){linpperm},
+            rsquaredperm=if(permute==T){rsquaredperm},propperm=if(permute==T){propperm},imputed=if(imputeknn==T){gimpute$data})
 
   class(ret)<-"prince"
   return(ret)

@@ -34,7 +34,7 @@ prince(g, o, top = 25, imputeknn = F, center = T, permute = F)
 \details{
 To calculate the principal components of a data matrix, the function prcomp is used. The function prcomp uses singular value decomposition instead of eigen decomposition of the covariance matrix, the actual principal component analysis. As prcomp cannot handle missing values they have to be imputed beforehands, imputeknn=TRUE can be used for k-nearest neighbor imputation from package impute, k is 10.
 A linear model is perfomed to find associations of the principal components with a dataframe of sample annotations. The f-statistics of lm(principal component i ~ sample annotation j) is used to 
-derive the p-value for these association. The results can be plotted using the prince.plot() function. If permute=TRUE the analysis will be repeated on permuted data, in which for each feature the values have been randomly shuffled.   
+derive the p-value for these associations. The results can be plotted using the prince.plot() function. If permute=TRUE the analysis will be repeated on permuted data, in which for each feature the values have been randomly shuffled.   
 }
 \value{
 a list as a prince object with components
@@ -42,6 +42,8 @@ a list as a prince object with components
     }
   \item{linp}{matrix containing the F-test p-values from lm(principal component~sample annotation).
     }
+  \item{rsquared}{matrix containing the R-squared values from lm(principal component~sample annotation).
+    }  
   \item{prop}{numeric vector containing the percentage of the overall variation for each principal component.
     }
   \item{o}{the input data.frame containing the patient annotations.
@@ -49,29 +51,31 @@ a list as a prince object with components
   \item{pr.perm}{if permute=T it contains the outcome list from prcomp for the permuted data.
     }
   \item{linpperm}{if permute=T it contains the p-values for the permuted data.
-    } 
+    }
+  \item{rsquaredperm}{if permute=T it contains the R-squared values for the permuted data.
+    }   
   \item{propperm}{if permute=T it contains the percentages of variation for the permuted data.
     }
   \item{imputed}{if imputeknn=T it contains the data matrix with the imputed values.
     }
 }
-\references{}
 \author{Martin Lauss}
 \note{requires the package impute}
-
-\seealso{}
 \examples{
 ## data as a matrix
 set.seed(100)
-g<-matrix(nrow=1000,ncol=50,rnorm(1000*50),dimnames=list(paste("Feature",1:1000),paste("Sample",1:50)))
+g<-matrix(nrow=1000,ncol=50,rnorm(1000*50),dimnames=list(paste("Feature",1:1000),
+          paste("Sample",1:50)))
 g[1:100,26:50]<-g[1:100,26:50]+1 # the first 100 features show higher values in the samples 26:50
 ## patient annotations as a data.frame, annotations should be numbers and factor but not characters.
 ## rownames have to be the same as colnames of the data matrix 
 set.seed(200)
-o<-data.frame(Factor1=factor(c(rep("A",25),rep("B",25))),Factor2=factor(rep(c("A","B"),25)),
+o<-data.frame(Factor1=factor(c(rep("A",25),rep("B",25))),
+              Factor2=factor(rep(c("A","B"),25)),
               Numeric1=rnorm(50),row.names=colnames(g))
               
-## calculate principal components and use linear models to calculate their dependence on sample annotations
+## calculate principal components and use linear models to calculate 
+## their dependence on sample annotations
 res1<-prince(g,o,top=10,permute=TRUE)
 str(res1)
 res1$linp # to see the p values

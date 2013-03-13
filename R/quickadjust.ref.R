@@ -9,6 +9,8 @@ function(g,batches,refbatch){
   if(length(refbatch)!=1){stop("refbatch does not have length 1")}
   if(class(refbatch)!="character"){stop("refbatch is not a character")}
   if(any(levels(batches)==refbatch)==FALSE){stop("refbatch is not a level of batches")}
+  isna<-which(is.na(batches))
+  if (length(isna)>0) {warning(paste("Samples",toString(isna),"will not be adjusted because of NAs in batches"))   }
   
   gafter<-g
   gafter[]<-NA
@@ -33,4 +35,3 @@ function(g,batches,refbatch){
   }
   return(list(adjusted.data=gafter,scaling.factors=adjustervalues))
   }
-
