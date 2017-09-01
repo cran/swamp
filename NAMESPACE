@@ -1,1 +1,12 @@
 export(prince,prince.plot,prince.var.plot,hca.plot,hca.test,confounding,feature.assoc,dense.plot,corrected.p,quickadjust.zero,quickadjust.ref,kill.pc,adjust.linearmodel,combat)
+  importFrom("grDevices", "heat.colors", "palette")
+  importFrom("graphics", "axis", "layout", "legend", "lines", "par",
+             "plot", "points", "rect", "title")
+  importFrom("stats", "as.dendrogram", "chisq.test", "cor", "cor.test",
+             "cutree", "density", "dnorm", "fisher.test", "lm", "median",
+             "na.omit", "p.adjust", "pf", "prcomp", "qqline", "qqnorm",
+             "qqplot", "rgamma", "t.test", "var", "wilcox.test")
+import("MASS")
+import("amap")
+import("gplots")
+import("impute")

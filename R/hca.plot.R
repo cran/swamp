@@ -1,7 +1,6 @@
 hca.plot <-
 function(g,o,method="correlation",link="ward",colored=palette(),border=NA,code=colnames(o),cex.code=1,breaks=round(nrow(oreihe)/4),cutcolors=colorpanel(breaks,low="green",mid="black",high="red")){
-require(amap)
-require(gplots)
+
 
 if(is.data.frame(o)){
       if(!identical(rownames(o),colnames(g))){

@@ -12,7 +12,6 @@ function(g,o,top=25,imputeknn=F,center=T,permute=F){
       if(!identical(rownames(o),colnames(g))){warning("Colnames of g are not the same as rownames of o")}
 
       if (imputeknn==T){
-         require(impute)
          gimpute<-impute.knn(g)
          g<-gimpute$data
          }

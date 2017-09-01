@@ -5,7 +5,6 @@
   if(any(pc>nrow(g))){stop("one element of pc is larger than nrow(g)")}
   
   if (imputeknn==T){
-         require(impute)
          gimpute<-impute.knn(g)
          g<-gimpute$data
          }

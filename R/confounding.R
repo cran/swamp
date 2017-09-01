@@ -46,7 +46,6 @@ function(o,method="chisq",workspace=2e7,smallest=-20,diagonal.zero=F,label=colna
                 test[i,j]<-"lm"}
                   }
                 }}   
-   require(gplots)
    if(diagonal.zero==T){matp[-(which(upper.tri(matp)|lower.tri(matp)))]<-0}
    linp10<-log10(matp)
    linp10<-replace(linp10,linp10<=smallest,smallest)

@@ -1,6 +1,6 @@
 hca.test <-
 function(g,o,dendcut=2,method="correlation",link="ward",test="chisq",workspace=2e7){
-   require(amap)
+
    if(is.data.frame(o)){
       if(!identical(rownames(o),colnames(g))){
         stop("Colnames of g are not the same as rownames of o")}

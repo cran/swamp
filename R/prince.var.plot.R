@@ -5,7 +5,6 @@ function(g,show.top=dim(g)[2],imputeknn=F,center=T,npermute=10){
             if(show.top>nrow(g)){stop("top is larger than nrow(g)")}
 
       if (imputeknn==T){
-         require(impute)             
          gimpute<-impute.knn(g)
          g<-gimpute$data
          }

@@ -2,8 +2,9 @@
 \alias{prince.var.plot}
 \title{ScreePlot of the data variation covered by the principal components
 }
-\description{To identify the number of top principal components with relevant variation, this function
-plots the variation contained in the pc for both observed data and reshuffled data.
+\description{To identify the number of top principal components with relevant variation,
+this function plots the variation contained in the pc for both observed data
+and reshuffled data.
 }
 \usage{
 prince.var.plot(g, show.top = dim(g)[2], imputeknn = F, 
@@ -14,24 +15,34 @@ prince.var.plot(g, show.top = dim(g)[2], imputeknn = F,
   the input data in form of a matrix with features as rows and samples as columns.
 }
   \item{show.top}{
-  the number of top principal components to be shown in the plot (cannot exceed ncol(g) or nrow(g)).
+  the number of top principal components to be shown in the
+  plot (cannot exceed ncol(g) or nrow(g)).
 }
   \item{imputeknn}{
-  default=FALSE. missing values in the data matrix can be imputed by imputeknn=TRUE. The function knn.impute from the package impute is used with default settings. 
+  default=FALSE. missing values in the data matrix can be imputed by imputeknn=TRUE.
+  The function knn.impute from the package impute is used with default settings. 
 }
   \item{center}{
-  default=TRUE. the features are mean-centered before singular value decompositon. this is a pre-requisite for principal component analysis, change only if you are really convinced that centering is not necessary. 
+  default=TRUE. the features are mean-centered before singular value decompositon.
+  this is a pre-requisite for principal component analysis, change only if you are
+  really convinced that centering is not necessary. 
 }
   \item{npermute}{
-  the number of reshuffled datasets. default=10. A permuted data matrix is generated with the values for each feature shuffled. From the permutation sets the median percentage of variation for each principal component is taken.
+  the number of reshuffled datasets. default=10. A permuted data matrix is generated
+  with the values for each feature shuffled. From the permutation sets the median
+  percentage of variation for each principal component is taken.
 }
 }
-\details{The function prcomp() is used to calculate the variation of the data contained in the principal components.  As prcomp cannot handle missing values they have to be imputed beforehands, using imputeknn=TRUE.}
+\details{The function prcomp() is used to calculate the variation of the data
+contained in the principal components.  As prcomp cannot handle missing values
+they have to be imputed beforehands, using imputeknn=TRUE.}
 \value{
 a list with components
-  \item{real.variation}{a vector containing the percentage of variation for each principal component in the observed data.
+  \item{real.variation}{a vector containing the percentage of variation for
+  each principal component in the observed data.
     }
-  \item{permuted.variation}{a matrix containing the percentages of variation for each principal component in the reshuffled data sets.
+  \item{permuted.variation}{a matrix containing the percentages of variation
+  for each principal component in the reshuffled data sets.
     }
 }
 \author{Martin Lauss}

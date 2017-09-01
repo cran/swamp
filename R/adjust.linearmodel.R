@@ -22,7 +22,6 @@
           }
        }           
           else {
-          require(MASS)
           for(i in 1:nrow(g)){
           gafter[i,index] <- rlm(g[i,] ~ ., o.batches)$residuals}
           }

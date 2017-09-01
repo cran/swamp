@@ -7,9 +7,12 @@ Visualization, analysis and adjustment of high-dimensional data in respect to sa
 }
 \description{
 The package contains functions to connect the structure of the data with sample information.
-Three types of analyses are covered: 1. linear models of principal components. 2. hierarchical clustering analysis. 
-3. distribution of associations between individual features and sample annotations. Additionally, the inter-relation between sample annotations can be analyzed. 
-We include methods for batch adjustment by a. median-centering, b. linear models and c. empirical bayes (combat).
+Three types of analyses are covered: 1. linear models of principal components. 2. hierarchical
+clustering analysis. 
+3. distribution of associations between individual features and sample annotations.
+Additionally, the inter-relation between sample annotations can be analyzed. 
+We include methods for batch adjustment by a. median-centering,
+b. linear models and c. empirical bayes (combat).
 A method to remove principal components from the data is also included. 
 }
 \details{
@@ -21,14 +24,34 @@ Date: \tab 2011-01-14\cr
 License: \tab GPLv2\cr
 LazyLoad: \tab yes\cr
 }
-This package aims to find the associations between a high-dimensional data matrix, typically obtained form high-throughput analysis, to the sample annotations, be they technical (e.g. batch surrogates) or biological information.
-High-dimensional data usually has a much larger number of features than samples. This requires specific analysis to see "how the data looks like" and in which way the technical and biological information on the samples is reflected in the dataset.
-Sample annotations can be analyzed for their association to principal componenents (prince(), prince.plot(), prince.var.plot()) as well as clusters from HCA (hca.plot(), hca.test()).
-The distribution of association of sample annotations to the features can be plotted and analysed (feature.assoc(), dense.plot(), corrected.p()).
-Batch surrogate variables might be associated with biological annotations, hence making batch adjustment of the data problematic. The associations between the sample annotations can be calculated and plotted (confounding()).
-If unwanted batch effects have been identified in the previous steps, two simple methods are provided to adjust the data (quickadjust.zero(), quickadjust.ref()). Another batch adjustment uses linear models,
-with the advantage to remove numerical variables and several variables at once (adjust.linearmodel()). In addition, the popular ComBat batch adjustment has been adopted for the package to combine batches of small sample size (combat()). Principal components confounded by batch variables can be reomved from the data (kill.pc()). 
-To use the functions of this package, the data matrix has to be a numeric matrix and the sample annotations have to be a data.frame with numeric or factors with 2 or more levels. NAs are allowed in both the data matrix and the annotation dataframe, except for the functions adjust.linearmodel() and combat(). 
+This package aims to find the associations between a high-dimensional data matrix,
+typically obtained form high-throughput analysis, to the sample annotations,
+be they technical (e.g. batch surrogates) or biological information.
+High-dimensional data usually has a much larger number of features than samples.
+This requires specific analysis to see "how the data looks like" and in which
+way the technical and biological information on the samples is reflected in the
+dataset.
+Sample annotations can be analyzed for their association to principal
+componenents (prince(), prince.plot(), prince.var.plot()) as well as clusters
+from HCA (hca.plot(), hca.test()).
+The distribution of association of sample annotations to the features can be
+plotted and analysed (feature.assoc(), dense.plot(), corrected.p()).
+Batch surrogate variables might be associated with biological annotations,
+hence making batch adjustment of the data problematic. The associations between
+the sample annotations can be calculated and plotted (confounding()).
+If unwanted batch effects have been identified in the previous steps, two
+simple methods are provided to adjust the data (quickadjust.zero(),
+quickadjust.ref()). Another batch adjustment uses linear models,
+with the advantage to remove numerical variables and several variables at
+once (adjust.linearmodel()). In addition, the popular ComBat batch adjustment
+has been adopted for the package to combine batches of small sample
+size (combat()). Principal components confounded by batch variables can be
+reomved from the data (kill.pc()). 
+To use the functions of this package, the data matrix has to be a numeric
+matrix and the sample annotations have to be a data.frame with numeric or
+factors with 2 or more levels. NAs are allowed in both the data matrix and
+the annotation dataframe, except for the functions adjust.linearmodel()
+and combat(). 
 }
 \author{
 Martin Lauss

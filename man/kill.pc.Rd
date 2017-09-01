@@ -11,16 +11,26 @@ kill.pc(g, pc, imputeknn = F, center = T)
 \arguments{
   \item{g}{the input data in form of a matrix with features as rows and samples as columns.
 }
-  \item{pc}{the principal components to be removed in form of a numeric vector of length 1 or more. e.g. to remove pc1 and pc3 use pc=c(1,3), to remove only pc3 use pc=3.
+  \item{pc}{the principal components to be removed in form of a numeric vector of
+  length 1 or more. e.g. to remove pc1 and pc3 use pc=c(1,3), to remove only pc3 use pc=3.
 }
-  \item{imputeknn}{default=FALSE. missing values in the data matrix can be imputed by imputeknn=TRUE. The function knn.impute from the package impute is used with default settings. 
+  \item{imputeknn}{default=FALSE. missing values in the data matrix can be imputed
+  by imputeknn=TRUE. The function knn.impute from the package impute is used with default settings. 
 }
   \item{center}{
-  default=TRUE. the features are mean-centered before singular value decompositon. this is a pre-requisite for principal component analysis, change only if you are really convinced that centering is not necessary. 
+  default=TRUE. the features are mean-centered before singular value decompositon.
+  this is a pre-requisite for principal component analysis, change only if you are
+  really convinced that centering is not necessary. 
 }
 }
-\details{A specific principal component might be associated with several interelated batch surrogate variables but free from biological associations. In such a case it may be useful to take out such a principal component from the data.
-  The svd() function resolves the data matrix X into X = U*D*V. D is then set to zero for the unwanted principal components and the data X is recalculated. If you use the default center=TRUE make sure you also use prince() with the default center=TRUE. Using different settings for center for the two functions is not fully compatible.
+\details{A specific principal component might be associated with several interelated
+batch surrogate variables but free from biological associations. In such a case it may
+be useful to take out such a principal component from the data.
+  The svd() function resolves the data matrix X into X = U*D*V. D is then set to
+  zero for the unwanted principal components and the data X is recalculated.
+  If you use the default center=TRUE make sure you also use prince() with the
+  default center=TRUE. Using different settings for center for the two functions
+  is not fully compatible.
 }
 \value{
 a matrix which is the new data with the specified principal components removed.
@@ -34,8 +44,10 @@ a matrix which is the new data with the specified principal components removed.
 set.seed(100)
 g<-matrix(nrow=1000,ncol=50,rnorm(1000*50),dimnames=list(paste("Feature",1:1000),
    paste("Sample",1:50)))
-g[1:100,26:50]<-g[1:100,26:50]+1 # the first 100 features show higher values in the samples 26:50
-# patient annotations as a data.frame, annotations should be numbers and factors but not characters.
+g[1:100,26:50]<-g[1:100,26:50]+1 # the first 100 features show
+# higher values in the samples 26:50
+# patient annotations as a data.frame, annotations should be numbers and factors
+# but not characters.
 # rownames have to be the same as colnames of the data matrix 
 set.seed(200)
 o<-data.frame(Factor1=factor(c(rep("A",25),rep("B",25))),

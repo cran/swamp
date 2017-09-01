@@ -142,7 +142,7 @@ Beta.NA = function(y,X){
 	cat('Standardizing Data across genes\n')
 	if (!NAs){B.hat <- solve(t(design)%*%design)%*%t(design)%*%t(as.matrix(dat))}else{B.hat=apply(dat,1,Beta.NA,design)} #Standarization Model
 	grand.mean <- t(n.batches/n.array)%*%B.hat[1:n.batch,]
-	if (!NAs){var.pooled <- ((dat-t(design%*%B.hat))^2)%*%rep(1/n.array,n.array)}else{var.pooled <- apply(dat-t(design%*%B.hat),1,var,na.rm=T)}
+	if (!NAs){var.pooled <- ((as.matrix(dat)-t(design%*%B.hat))^2)%*%rep(1/n.array,n.array)}else{var.pooled <- apply(dat-t(design%*%B.hat),1,var,na.rm=T)}
 
 	stand.mean <- t(grand.mean)%*%t(rep(1,n.array))
 	if(!is.null(design)){tmp <- design;tmp[,c(1:n.batch)] <- 0;stand.mean <- stand.mean+t(tmp%*%B.hat)}
