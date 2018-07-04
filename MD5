@@ -1,4 +1,4 @@
-35fcdfe98ae29b34e60938510532d1fb *DESCRIPTION
+6e02a60072cacc5cfc5f6897fe2d6a1a *DESCRIPTION
 e81857ed283bf7091d4aa7162066390b *NAMESPACE
 7c5aa1d72a3be676dd361f97ebfce999 *R/adjust.linearmodel.R
 e914c30f78de9057f93c3092eda20d91 *R/combat.R
@@ -14,8 +14,9 @@ a2d0e99dcf05250dadd31b256387c7a0 *R/prince.R
 1a93b1bc7255a21f0388ac56a27cb376 *R/prince.var.plot.R
 2ccb559577dd4b4a3740b2d6bf6c0709 *R/quickadjust.ref.R
 b9b52b7a2022b13e021aa27ab4d26281 *R/quickadjust.zero.R
-d07714d47dfb722c13122d0db804d52a *man/adjust.linearmodel.Rd
-87aab2dbf11aa0d735da1c94b8226d72 *man/combat.Rd
+c7060d3b98fdc795541faf4bedef9f1a *build/partial.rdb
+ed00c7daa88168a1cc7a3e683ce40ee7 *man/adjust.linearmodel.Rd
+7afc92c2b91645263b2739cec3b07a84 *man/combat.Rd
 2aeb8583e4dff96bce2734931487a639 *man/confounding.Rd
 eec130a72f82e4c57f55d6b0c18ae63a *man/corrected.p.Rd
 26ac973d6a021a0497b94344f72812ac *man/dense.plot.Rd
@@ -28,4 +29,4 @@ b20f6864c2e04774d8b0806c5ce295f2 *man/kill.pc.Rd
 fea570fd776f9cc37b82720cdda09eba *man/prince.var.plot.Rd
 3f88acc28782aa183129d3a695666d2d *man/quickadjust.ref.Rd
 649bd58902fb58fba82d27fa9d5bbf29 *man/quickadjust.zero.Rd
-4b293aac02e64ff7e629eda83ce7ecc7 *man/swamp-package.Rd
+d32dd3f2ce932b726de7a1c6f35a8499 *man/swamp-package.Rd

@@ -1,5 +1,4 @@
 \name{combat}
-\Rdversion{1.1}
 \alias{combat}
 \title{
 ComBat algorithm to combine batches.

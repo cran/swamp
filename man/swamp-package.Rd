@@ -3,7 +3,7 @@
 \alias{swamp}
 \docType{package}
 \title{
-Visualization, analysis and adjustment of high-dimensional data in respect to sample annotations.
+\packageTitle{swamp}
 }
 \description{
 The package contains functions to connect the structure of the data with sample information.
@@ -16,14 +16,10 @@ b. linear models and c. empirical bayes (combat).
 A method to remove principal components from the data is also included. 
 }
 \details{
-\tabular{ll}{
-Package: \tab swamp\cr
-Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2011-01-14\cr
-License: \tab GPLv2\cr
-LazyLoad: \tab yes\cr
-}
+
+The DESCRIPTION file:
+\packageDESCRIPTION{swamp}
+\packageIndices{swamp}
 This package aims to find the associations between a high-dimensional data matrix,
 typically obtained form high-throughput analysis, to the sample annotations,
 be they technical (e.g. batch surrogates) or biological information.
@@ -54,8 +50,9 @@ the annotation dataframe, except for the functions adjust.linearmodel()
 and combat(). 
 }
 \author{
-Martin Lauss
-martin.lauss@med.lu.se
+\packageAuthor{swamp}
+
+Maintainer: \packageMaintainer{swamp}
 }
 \keyword{ package }
 \examples{

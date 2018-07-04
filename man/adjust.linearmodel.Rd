@@ -1,5 +1,4 @@
 \name{adjust.linearmodel}
-\Rdversion{1.1}
 \alias{adjust.linearmodel}
 \title{Batch adjustment using a linear model
 }
