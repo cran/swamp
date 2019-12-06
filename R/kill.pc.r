@@ -1,5 +1,5 @@
 "kill.pc"<-function(g,pc,imputeknn=F,center=T){
-  if(class(g)!="matrix"){stop("g is not a matrix")}
+  if(is(g,"matrix")==FALSE){stop("g is not a matrix")}
   if(!is.numeric(pc)){stop("pc is not numeric")}
   if(any(pc>ncol(g))){stop("one element of pc is larger than ncol(g)")}
   if(any(pc>nrow(g))){stop("one element of pc is larger than nrow(g)")}

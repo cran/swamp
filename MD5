@@ -1,6 +1,6 @@
-6e02a60072cacc5cfc5f6897fe2d6a1a *DESCRIPTION
-e81857ed283bf7091d4aa7162066390b *NAMESPACE
-7c5aa1d72a3be676dd361f97ebfce999 *R/adjust.linearmodel.R
+217e2f79fc141e0c006fb750bc4529e4 *DESCRIPTION
+6765ff729200f0eb65fd47875d0a62c6 *NAMESPACE
+ae75ade421c641901fd6b1ab34d7b20c *R/adjust.linearmodel.R
 e914c30f78de9057f93c3092eda20d91 *R/combat.R
 4d25b878f9542bfbc609c2152c93ef15 *R/confounding.R
 7080630ba742cb481fa2f62184ebc4fa *R/corrected.p.R
@@ -8,13 +8,13 @@ a4274c05404d07cb10b998c8659ac0a2 *R/dense.plot.R
 aaf7e1bc857e30edb70761ac9840e0a7 *R/feature.assoc.R
 cc4189554d848070e8cbc34e6dd75115 *R/hca.plot.R
 dc40ec7b5fb4f17ea0e443198d132ca4 *R/hca.test.R
-d87268a192ee7b6f827d66579786af4e *R/kill.pc.r
+ef41fa5d084135b9a54dc72870b62e47 *R/kill.pc.r
 a2d0e99dcf05250dadd31b256387c7a0 *R/prince.R
 3d0a089d256c951a989d674b8d6779a6 *R/prince.plot.R
 1a93b1bc7255a21f0388ac56a27cb376 *R/prince.var.plot.R
-2ccb559577dd4b4a3740b2d6bf6c0709 *R/quickadjust.ref.R
-b9b52b7a2022b13e021aa27ab4d26281 *R/quickadjust.zero.R
-c7060d3b98fdc795541faf4bedef9f1a *build/partial.rdb
+6664e491089e7b1b9a1d701165734a05 *R/quickadjust.ref.R
+5b7c9fc340a9587bcd0d4d054d2cc67f *R/quickadjust.zero.R
+4fc1cdfae05cfea4b178c193004823c8 *build/partial.rdb
 ed00c7daa88168a1cc7a3e683ce40ee7 *man/adjust.linearmodel.Rd
 7afc92c2b91645263b2739cec3b07a84 *man/combat.Rd
 2aeb8583e4dff96bce2734931487a639 *man/confounding.Rd

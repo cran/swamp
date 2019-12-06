@@ -1,6 +1,6 @@
 "adjust.linearmodel"<-function (g, o.batches, robust.lm=F, small.memory=F){              
        
-       if(class(g)!="matrix"){stop("g is not a matrix")}
+       if(is(g,"matrix")==FALSE){stop("g is not a matrix")}
        if(nrow(data.frame(o.batches))!=ncol(g)){stop("o.batches has not the same number of samples as ncol(g)")}
        if(!is.data.frame(o.batches)){
        o.batches<-data.frame(o.batches,row.names=colnames(g))}

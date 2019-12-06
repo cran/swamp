@@ -1,7 +1,7 @@
 quickadjust.ref <-
 function(g,batches,refbatch){
 
-  if(class(g)!="matrix"){stop("g is not a matrix")}
+  if(is(g,"matrix")==FALSE){stop("g is not a matrix")}
   if(class(batches)!="factor"){stop("batches is not a factor")}
   if(length(levels(batches))<1.5){stop("batches has to be a factor with at least two levels")}
   if(length(batches)!=ncol(g)){stop("batches has not the same length as ncol(g)")}

@@ -6,6 +6,7 @@ export(prince,prince.plot,prince.var.plot,hca.plot,hca.test,confounding,feature.
              "cutree", "density", "dnorm", "fisher.test", "lm", "median",
              "na.omit", "p.adjust", "pf", "prcomp", "qqline", "qqnorm",
              "qqplot", "rgamma", "t.test", "var", "wilcox.test")
+  importFrom("methods", "is")
 import("MASS")
 import("amap")
 import("gplots")
